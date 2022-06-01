@@ -1,4 +1,4 @@
-# Haupert S. & al. Physics-based model to predict the acoustic detection distance of autonomous recorder units over diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Journal to be defined (XXXX)
+# Haupert S. & al. Physics-based model to predict the acoustic detection distance of autonomous recorder units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Journal to be defined (XXXX)
 
 This repository contains all the functions in 'R' that were used to process the data and create figures of the publication 
 [Haupert et. al. XXXX, journal to be defined](https://www.to.be.defined.fr)
