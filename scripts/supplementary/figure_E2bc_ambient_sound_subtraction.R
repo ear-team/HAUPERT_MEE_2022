@@ -12,7 +12,7 @@ rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ##### CALL functions from MY TOOLBOX
-source("./toolbox/toolbox_propa.R", chdir=T)
+source("../toolbox/toolbox_propa.R", chdir=T)
 
 #=======================================================================================================#
 #
@@ -22,7 +22,7 @@ source("./toolbox/toolbox_propa.R", chdir=T)
 
 # filename root of the data
 FILENAME_ROOT = "jura_svantek_wn" # guiana_svantek_wn guiana_sm4_wn jura_svantek_wn jura_sm4_wn
-FILE_DIR = "../data/psd/" 
+FILE_DIR = "../../data/psd/" 
 # Save results
 SAVE = TRUE
 # display results ?

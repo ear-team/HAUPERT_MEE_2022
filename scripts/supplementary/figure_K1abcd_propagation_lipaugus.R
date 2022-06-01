@@ -26,12 +26,12 @@ library(seewave)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ##### CALL functions from MY TOOLBOX
-source("./toolbox/toolbox_propa.R", chdir=T)
+source("../toolbox/toolbox_propa.R", chdir=T)
 
 #=================================================================================================
 # simulation attenuation on real data : ex Lipaugus vociferans
 ############## Lipaugus vociferans
-filename = "../data/guiana/LIPAUGUS/S4A09154_20191120_134500.wav"
+filename = "../../data/guiana/LIPAUGUS/S4A09154_20191120_134500.wav"
 
 R0 = 200 # reference distance
 R = c(200, 300, 400, 600, 800)  # final distances

@@ -29,7 +29,7 @@ library(grid)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ##### CALL functions from MY TOOLBOX
-source("./toolbox/toolbox_propa.R", chdir=T)
+source("../toolbox/toolbox_propa.R", chdir=T)
 
 #=======================================================================================================#
 #
@@ -73,7 +73,7 @@ month = c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 if (SITE =='GUIANA')
 {
   root = 'guiana_SPL_ground_perHour_'
-  file_dir = '../data/guiana/YEAR_AMBIENT_SOUND/'
+  file_dir = '../../data/guiana/YEAR_AMBIENT_SOUND/'
   day = rep(6,12)
   night = rep(19,12)
   # get the constants
@@ -85,7 +85,7 @@ if (SITE =='GUIANA')
 if (SITE =='JURA')
 {
   root = 'jura_SPL_perHour_'
-  file_dir = '../data/jura/YEAR_AMBIENT_SOUND/'
+  file_dir = '../../data/jura/YEAR_AMBIENT_SOUND/'
   day = c(9,8,7,6,6,6,6,7,7,8,8,9)
   night = c(18,18,19,20,21,21,21,20,19,19,18,18)
   # get the constants
@@ -148,7 +148,7 @@ for (mm in seq(1:12))
     # assuming that all SM4 have the exact same frequency response
     # It would be better to adapt the correction for each SM4 if possible.
     # load('SM4_corr_frequency_response_dB_N2048.Rdata')
-    load('./toolbox/SM4_gain.Rdata')
+    load('../toolbox/SM4_gain.Rdata')
     FREQ_GAIN_CORR = SM4.G[,1]
     GAIN_CORR = SM4.G[,2] 
     # linear interpolation of SM4.G in order to match the frequency bin

@@ -20,7 +20,7 @@ library(plotly)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ##### CALL functions from MY TOOLBOX
-source("./toolbox/toolbox_propa.R", chdir=T)
+source("../toolbox/toolbox_propa.R", chdir=T)
 
 #=======================================================================================================#
 #
@@ -118,7 +118,7 @@ propa.plot.active_distance_compiled <- function (L0, L_bkg, f, d, r0=1, t=20, rh
 #########  white noise @ 80dB SPL between 0-20kHz
 # filename root of the data
 FILENAME_ROOT = "jura_sm4_wn" # guiana_svantek_wn guiana_sm4_wn jura_svantek_wn jura_sm4_wn
-FILE_DIR = "../data/psd/" 
+FILE_DIR = "../../data/psd/" 
 FILENAME = paste(FILE_DIR,FILENAME_ROOT, '_average', '.Rdata', sep="") # filename
 CORRECTION_RECORDER = TRUE # SM4 gain correction
 TEMP = 17   # Temperature (JURA : 17 / GUIANA : 24 )
@@ -163,7 +163,7 @@ if ((CORRECTION_RECORDER == TRUE) && (grepl("sm4", FILENAME_ROOT) == TRUE))
   # The gain to correct the frequency response of the SM4 was measured on a single SM4 recorder, 
   # assuming that all SM4 have the exact same frequency response
   # It would be better to adapt the correction for each SM4 if possible.
-  load('./toolbox/SM4_gain.Rdata')
+  load('../toolbox/SM4_gain.Rdata')
   FREQ_GAIN_CORR = SM4.G[,1]
   GAIN_CORR = SM4.G[,2] 
   # linear interpolation of SM4.G in order to match the frequency bin

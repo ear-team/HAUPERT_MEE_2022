@@ -4,7 +4,7 @@ rm(list = ls())
 library(plotly)
 
 ##### CALL functions from MY TOOLBOX
-source("/home/haupert/DATA/mes_projets/_TOOLBOX/R/propagation/toolbox_propa.R")
+source("../toolbox/toolbox_propa.R")
 
 
 a0_jura = 0.022   # average value between SVANTEK and SM4
