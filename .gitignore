@@ -1,0 +1,18 @@
+# First, ignore everything
+*
+# Now, whitelist anything that's a directory
+!*/
+# except
+**/_old
+# And all the file types you're interested in.
+!*.py
+!*.R
+!*.r
+!*.txt
+!*.png
+!*.wav
+!*.csv
+!*.pdf
+!*.Rdata
+# and .gitignore
+!.gitignore
