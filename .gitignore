@@ -2,6 +2,7 @@
 *
 # Now, whitelist anything that's a directory
 !*/
+**/_old
 # And all the file types you're interested in.
 !*.py
 !*.R
