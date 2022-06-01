@@ -3,11 +3,9 @@
 This repository contains all the functions in 'R' that were used to process the data and create figures of the publication 
 [Haupert et. al. XXXX, journal to be defined](https://www.to.be.defined.fr)
 
-The code is available for eproducibility.
+The code is available for reproducibility.
 
-This repository is archived on Zenodo:
-
-[![DOI](https://zenodo.org/badge/DOI/XXXX/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.3530203)
+This repository is archived on Zenodo: [![DOI](https://zenodo.org/badge/DOI/XXXX/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.3530203)
 
 If the code, even partially, is used for other purpose please cite the paper `Haupert S., Sèbe F., Sueur J. Physics-based model to predict the acoustic detection distance variation of autonomous recorder units: insights from an Alpine and a Neotropical forest. Journal to be defined (XXXX)`
 
@@ -22,7 +20,7 @@ Then, use your favorite R environment (e.g. RStudio). The scripts are ready to b
 * tidyverse, ggplot2, dplyr
 
 The R scripts to reproduce figures/analyses presented in the paper are:
-* The transmitted white noise recorded by either the SM4 or the SVANTEK and either in the Jura or the Guiana forest are extracted from the experimental audio recording by these scripts on  [`1_extraction_wn_guiana_SM4.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_guiana_SM4.R), [`1_extraction_wn_guiana_SVANTEK.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_guiana_SVANTEK.R), [`1_extraction_wn_jura_SM4.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_jura_SM4.R) and [`1_extraction_wn_jura_SVANTEK.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_jura_SVANTEK.R). These audio files are not at disposal. Please contact me if you want to use it.   
+* The transmitted white noise recorded by either the SM4 or the SVANTEK and either in the Jura or the Guiana forest are extracted from the experimental audio recordings by these scripts on  [`1_extraction_wn_guiana_SM4.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_guiana_SM4.R), [`1_extraction_wn_guiana_SVANTEK.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_guiana_SVANTEK.R), [`1_extraction_wn_jura_SM4.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_jura_SM4.R) and [`1_extraction_wn_jura_SVANTEK.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/1_extraction_wn_jura_SVANTEK.R). The audio recordings are not under GNU license. Please contact me if you want to use it.   
 * The average white noise signal is computed with [`2_avg_wn.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/2_avg_wn.R)
 * The equivalent continuous sound level (Leq) can be computed with [`3_compute_Leq.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/3_compute_Leq.R)
 * The average value of the ambient sound level Ln needed to display the variation of the detection distance over diel cycle and accross seasons with a constant Ln (see figure J1 and J2 in the supplementary) is computed with [`4_mean_Ln_over_year.R`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/4_mean_Ln_over_year.R) 
