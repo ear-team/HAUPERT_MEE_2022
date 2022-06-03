@@ -7,7 +7,7 @@ The code is available for reproducibility.
 
 This repository is archived on Zenodo: [![DOI](https://zenodo.org/badge/DOI/XXXX/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.3530203)
 
-If the code, even partially, is used for other purpose please cite the paper `Haupert S., Sèbe F., Sueur J. Physics-based model to predict the acoustic detection distance of autonomous recorder units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Journal to be defined (XXXX)`
+If the code, even partially, is used for other purpose please cite the paper `Haupert S., Sèbe F., Sueur J. Physics-based model to predict the acoustic detection distance of terrestrial autonomous recorder units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Journal to be defined (XXXX)`
 
 ## Setup and usage
 
