@@ -39,14 +39,13 @@ PLOT = TRUE
 # correction of the background noise
 CORRECTION_BKG = TRUE
 # BIN size when transforming PSD into histogram
-DELTA_FBIN = 0.1 # in kHz
+DELTA_FBIN = 0.5 # in kHz
 
 # Select the frequency range
 F_RANGE = c(0.5,15)
 
-
 # reference distance used to estimate a0
-LIST_R0 = c(10)
+LIST_R0 = c(10,20,30,40,50)
 
 # Set the right environmental values depending on the habitat
 if (grepl("jura", FILENAME_ROOT) == TRUE)
