@@ -65,10 +65,10 @@ if (grepl("jura", FILENAME_ROOT) == TRUE)
   FBW = 20
   if (grepl("sm4", FILENAME_ROOT) == TRUE) 
   {
-    A0 = 0.024 #0.0027
+    A0 = 0.024 
   } else # svantek
   {
-    A0 = 0.020 #0.0023
+    A0 = 0.020 
   }
 } else # french guiana
 {
@@ -84,10 +84,10 @@ if (grepl("jura", FILENAME_ROOT) == TRUE)
   FBW = 20
   if (grepl("sm4", FILENAME_ROOT) == TRUE) 
   {
-    A0 = 0.011 # 0.0013
+    A0 = 0.011 
   } else # svantek
   {
-    A0 = 0.019 # 0.0021
+    A0 = 0.019 
   }
 }
 

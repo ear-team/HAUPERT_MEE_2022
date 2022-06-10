@@ -23,7 +23,7 @@ library(seewave)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 ##### CALL functions from MY TOOLBOX
-source("./toolbox/toolbox_propa.R", chdir=T)
+source("../toolbox/toolbox_propa.R", chdir=T)
 
 #=======================================================================================================#
 #
@@ -120,7 +120,7 @@ propa.plot.active_distance_compiled <- function (L0, L_bkg, f, d, r0=1, t=20, rh
 #########  white noise @ 80dB SPL between 0-20kHz
 # filename root of the data
 FILENAME_ROOT = "guiana_svantek_wn" # guiana_svantek_wn guiana_sm4_wn jura_svantek_wn jura_sm4_wn
-FILE_DIR = "../data/psd/" 
+FILE_DIR = "../../data/psd/" 
 FILENAME = paste(FILE_DIR,FILENAME_ROOT, '_average', '.Rdata', sep="") # filename
 CORRECTION_RECORDER = TRUE # SM4 gain correction
 TEMP = 24   # Temperature (JURA : 17 / GUIANA : 24 )
@@ -138,7 +138,7 @@ dBMAX_ATT=100
 D_MAX=800
 
 # load data : p.bkg, p.exp, TEMP, RH, PS0, A0
-filename = "../data/guiana/LIPAUGUS/S4A09154_20191120_134500.wav"
+filename = "../../data/guiana/LIPAUGUS/S4A09154_20191120_134500.wav"
 bkg  = readWave(filename, from=1.8, to=3.9,units = 'seconds')
 
 # get the sampling frequency and the signals
