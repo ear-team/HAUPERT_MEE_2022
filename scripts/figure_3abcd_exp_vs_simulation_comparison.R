@@ -215,11 +215,11 @@ for (ff in 1:dim(F_SIMU)[2])
   p9 <- add_trace(p9, x = r.exp, y = L.exp, type = 'scatter', mode = 'markers', name= paste('Lexp (exp)',sep=""),
                   marker=list(opacity=1,  size=10),
                   showlegend = TRUE)
-  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB, type = 'scatter', mode = 'lines', name ='L - Ageo (model)' ,
+  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB, type = 'scatter', mode = 'lines', name ='L<sub>0</sub> - A<sub>geo</sub> (model)' ,
                   # marker=list(opacity=1, symbol=I(5), size=5),
                   line = list(dash="dash"),
                   showlegend = TRUE)
-  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB - Aatm.dB, type = 'scatter', mode = 'lines', name ='L - (Ageo + Aatm) (model)' ,
+  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB - Aatm.dB, type = 'scatter', mode = 'lines', name ='L<sub>0</sub> - (A<sub>geo</sub> + A<sub>atm</sub>) (model)' ,
                   # marker=list(opacity=1, symbol=I(2), size=5),
                   line = list(dash="dot"),
                   showlegend = TRUE)
