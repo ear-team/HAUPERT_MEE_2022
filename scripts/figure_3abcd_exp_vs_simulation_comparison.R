@@ -227,7 +227,7 @@ for (ff in 1:dim(F_SIMU)[2])
                   line = list(dash="dot"),
                   marker=list(opacity=0.75, symbol=I(2), size=9),
                   showlegend = TRUE)
-  p9 <- add_lines(p9, x = r.simu, y = L.simu_w_noise, mode = 'lines', name= paste('L (model) + Ln (exp)',sep=""),
+  p9 <- add_lines(p9, x = r.simu, y = L.simu_w_noise, mode = 'lines', name= paste('L (model) with Ln (exp)',sep=""),
                   marker=list(opacity=0.75, symbol=I(1), size=6, color='black'),
                   line = list(dash="dot", color='black'),
                   showlegend = TRUE)
