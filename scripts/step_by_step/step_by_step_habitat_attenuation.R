@@ -174,17 +174,17 @@ for (dd in 1:length(LIST_R0))
   # P_bkg.select : energy of the ambient sound 
   P_bkg.select = P_bkg[,DISTANCE_SELECT]  
   
+  #### CORRECTED SIGNAL AFTER AMBIENT SOUND SUBRACTION
   if (CORRECTION_BKG == TRUE)
   {
-    #### CORRECTED SIGNAL AFTER AMBIENT SOUND SUBRACTION
     # Set to NA the data below the ambient sound in order to avoid using them for the calculation
-    index = P.select < 4*P_bkg.select         
+    index = P.select < P_bkg.select         
     P.select[index] = NA      
     # subtract the noise level to the original sound level
     P.select = P.select-P_bkg.select 
   }
   
-  # geometrical or spheric or spreading loss attenuation : MATRIX [N*M]
+  # geometrical or spherical or spreading loss attenuation : MATRIX [N*M]
   Ageo.dB = propa.Ageo(r=r, r0=r0)$db
   Ageo.dB = matrix(rep(Ageo.dB,each=length(f)),nrow=length(f))
   # atmospheric attenuation 
@@ -216,7 +216,6 @@ for (dd in 1:length(LIST_R0))
 }
 
 ########################################################################""
-
 # robust linear regression with lmrob (library(robustbase))
 y = EA_per_d.mean
 x = f
@@ -296,7 +295,7 @@ if (PLOT == TRUE)
     bkg.PSD.Leq[ii] = psd2leq(bkg.PSD[,ii], gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef = P_REF)
   }
   
-  p <-
+  fig_LEQ <-
     plot_ly(
       x = DISTANCES,
       y = sig.PSD.Leq ,
@@ -305,9 +304,9 @@ if (PLOT == TRUE)
       name = 'White noise',
       showlegend = TRUE
     )
-  p <-
+  fig_LEQ <-
     add_trace(
-      p,
+      fig_LEQ,
       y = bkg.PSD.Leq ,
       type = 'scatter',
       mode = 'lines',
@@ -315,8 +314,8 @@ if (PLOT == TRUE)
       showlegend = TRUE
     )
   
-  p3 <- layout(
-    p,
+  fig_LEQ <- layout(
+    fig_LEQ,
     autosize = F,
     width = 450,
     height = 250,
@@ -327,7 +326,7 @@ if (PLOT == TRUE)
     yaxis = YAXIS_SPECTRUM
   )
   
-  p3
+  show(fig_LEQ)
   
   #====================================================================================================#
   #               Plot raw spectrum for each distance
@@ -344,23 +343,14 @@ if (PLOT == TRUE)
   # Convert psd (P) into dB sound pressure level (L)
   # get the original sound level (with noise) Lexp 
   Lexp = psd2dBSPL(P, gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef=P_REF) 
-  # get the noise level
-  L_bkg = psd2dBSPL(P_bkg, gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef=P_REF) 
   
-  #### CORRECTED SIGNAL AFTER AMBIENT SOUND SUBRACTION
-  # Set to NA the data below the ambient sound in order to avoid using them for the calculation
-  index = P< P_bkg         
-  P[index] = NA      
-  # subtract the noise level to the original sound level
-  P_corr= P-P_bkg 
-  L_corr = psd2dBSPL(P_corr, gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef=P_REF)   
-  
+  # Plot
   fig_spectrum <- plot_ly(width = 450, height = 350,
-                          x = f,  y = L[,1], type = 'scatter', mode = 'lines+markers', name = paste(r[1],'m'),showlegend = TRUE, marker=list(opacity=0.75, symbol =1, color= 1))
+                          x = f,  y = Lexp[,1], type = 'scatter', mode = 'lines+markers', name = paste(r[1],'m'),showlegend = TRUE, marker=list(opacity=0.75, symbol =1, color= 1))
   
   for (ii in 2:length(r))
   {
-    fig_spectrum <- add_trace(fig_spectrum, x =f , y =L[,ii], type = 'scatter', mode = 'lines+markers', name = paste(r[ii],'m'),showlegend = TRUE, marker=list(opacity=0.75, symbol =I(ii), color= ii))
+    fig_spectrum <- add_trace(fig_spectrum, x =f , y =Lexp[,ii], type = 'scatter', mode = 'lines+markers', name = paste(r[ii],'m'),showlegend = TRUE, marker=list(opacity=0.75, symbol =I(ii), color= ii))
   }
   
   fig_spectrum =layout(fig_spectrum, 
@@ -376,15 +366,30 @@ if (PLOT == TRUE)
   #               Plot mean SPL vs frequencies (frequency bins)
   #====================================================================================================#
   
+  # vector r with all distances
+  r = DISTANCES
+  
+  # convert spectrum into specbins
+  f     = specbin(bkg.PSD, FREQUENCY, DELTA_FBIN)$f
+  P_bkg = specbin(bkg.PSD, FREQUENCY, DELTA_FBIN)$s
+  P     = specbin(sig.PSD, FREQUENCY, DELTA_FBIN)$s
+  
+  # Convert psd (P) into dB sound pressure level (L)
+  # get the original sound level (with noise) Lexp and noise level Ln
+  Lexp = psd2dBSPL(P, gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef=P_REF) 
+  Ln = psd2dBSPL(P_bkg, gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef=P_REF)
+  
+  # subtract the noise level to the original sound level
+  index = P < P_bkg        
+  P[index] = NA  
+  P_corr = P - P_bkg         
+  Lexp_corr = psd2dBSPL(P_corr, gain=G, sensitivity=S, bit=bit, Vadc=VADC, pRef=P_REF)  
+  
   # map of dB SPL vs distance and frequency
-  fig_L = plot_ly(x = r, y = f, z =L, type = "heatmap", zmin=0, zmax=60) %>% hide_colorbar()
-  
-  fig_L_bkg = plot_ly(x = r, y = f, z =L_bkg, type = "heatmap", zmin=0, zmax=60) %>% hide_colorbar()
-  
-  fig_L_corr = plot_ly(x = r, y = f, z =L_corr,type = "heatmap", zmin=0, zmax=60, colorbar=list(title='dB SPL')) 
-  
-  fig_LdBSPL =subplot(fig_L, fig_L_bkg, fig_L_corr, shareY = TRUE)
-  
+  fig_Lexp      = plot_ly(x = r, y = f, z =Lexp,     type = "heatmap", zmin=0, zmax=60) %>% hide_colorbar()
+  fig_Ln        = plot_ly(x = r, y = f, z =Ln,       type = "heatmap", zmin=0, zmax=60) %>% hide_colorbar()
+  fig_Lexp_corr = plot_ly(x = r, y = f, z =Lexp_corr,type = "heatmap", zmin=0, zmax=60, colorbar=list(title='dB SPL')) 
+  fig_LdBSPL =subplot(fig_Lexp, fig_Ln, fig_Lexp_corr, shareY = TRUE)
   fig_LdBSPL =layout(fig_LdBSPL, 
                      width = 450, height = 350, 
                      paper_bgcolor='rgb(255,255,255)', 
@@ -393,7 +398,5 @@ if (PLOT == TRUE)
                      yaxis = XAXIS_FREQ)  
   
   show(fig_LdBSPL)
-  
-  
   
 }
