@@ -43,7 +43,7 @@ All the notebooks are available [here](https://drive.google.com/drive/folders/1p
 ## step by step tutorial
 
 A step by step R script is provided [here](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/step_by_step/step_by_step.ipynb)
-A nice to tool to visualize all the outputs of step by step R notebook is [here] (https://nbviewer.org/github/shaupert/HAUPERT_2022/blob/master/scripts/step_by_step/step_by_step.ipynb)
+A nice to tool to visualize all the outputs of step by step R notebook is [here](https://nbviewer.org/github/shaupert/HAUPERT_2022/blob/master/scripts/step_by_step/step_by_step.ipynb)
 
 ## Integration of the propagation functions into libraries
 
