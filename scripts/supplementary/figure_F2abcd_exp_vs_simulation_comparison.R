@@ -210,31 +210,31 @@ for (ff in 1:dim(F_SIMU)[2])
                    ticks = 'outside',
                    zeroline = FALSE)
   # Plot
-  p9 <- plot_ly(width = 450, height = 300, x = r.simu, y =L.simu, type = 'scatter', mode = 'lines', name = paste('Propagated signal (model)',sep=""),
+  p9 <- plot_ly(width = 450, height = 300, x = r.simu, y =L.simu, type = 'scatter', mode = 'lines', name = paste('L (model)',sep=""),
                 showlegend = TRUE)
-  p9 <- add_trace(p9, x = r.exp, y = L.exp, type = 'scatter', mode = 'markers', name= paste('Propagated signal (exp)',sep=""),
+  p9 <- add_trace(p9, x = r.exp, y = L.exp, type = 'scatter', mode = 'markers', name= paste('L<sub>exp</sub> (exp)',sep=""),
                   marker=list(opacity=1,  size=10),
                   showlegend = TRUE)
-  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB, type = 'scatter', mode = 'lines', name ='Spreading Losses (model)' ,
+  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB, type = 'scatter', mode = 'lines', name ='L<sub>0</sub> - A<sub>geo</sub> (model)' ,
                   # marker=list(opacity=1, symbol=I(5), size=5),
                   line = list(dash="dash"),
                   showlegend = TRUE)
-  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB - Aatm.dB, type = 'scatter', mode = 'lines', name ='Spreading Losses + Atmospheric attenuation (model)' ,
+  p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB - Aatm.dB, type = 'scatter', mode = 'lines', name ='L<sub>0</sub> - (A<sub>geo</sub> + A<sub>atm</sub>) (model)' ,
                   # marker=list(opacity=1, symbol=I(2), size=5),
                   line = list(dash="dot"),
                   showlegend = TRUE)
-  p9 <- add_lines(p9, x = r.simu, y = L_bkg.exp.mean, mode = 'lines', name= paste('Ambient sound level',sep=""),
+  p9 <- add_lines(p9, x = r.simu, y = L_bkg.exp.mean, mode = 'lines', name= paste('Ln (exp)',sep=""),
                   line = list(dash="dot"),
                   marker=list(opacity=0.75, symbol=I(2), size=9),
                   showlegend = TRUE)
-  p9 <- add_lines(p9, x = r.simu, y = L.simu_w_noise, mode = 'lines', name= paste('Propagated signal (model) + ambient sound (exp)',sep=""),
+  p9 <- add_lines(p9, x = r.simu, y = L.simu_w_noise, mode = 'lines', name= paste('L (model) with Ln (exp)',sep=""),
                   marker=list(opacity=0.75, symbol=I(1), size=6, color='black'),
                   line = list(dash="dot", color='black'),
                   showlegend = TRUE)
   p9 <-layout(p9,
               title = paste(F_SIMU[1,ff],'-',F_SIMU[2,ff],'kHz',sep=""),
               paper_bgcolor='rgb(255,255,255)', plot_bgcolor='rgb(229,229,229)',
-              legend = list(x = 0.1, y = 0.95),
+              legend = list(x = 0.1, y = -2, yanchor = 'bottom' ),
               showlegend = FALSE,
               xaxis = XAXIS_DIST,
               yaxis = YAXIS_SPL)
