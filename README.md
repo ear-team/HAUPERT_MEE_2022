@@ -42,8 +42,7 @@ All the notebooks are available [here](https://drive.google.com/drive/folders/1p
 
 ## step by step tutorial
 
-1. The loudspeaker used for the field experiment should be calibrated in order to correct its frequency response and obtain a frequency curve as flat as possible. The full process is explained in Appendix A of the paper and the R script is [`here`](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/supplementary/figure_A1_frequency_response_jbl.R) 
-
+A step by step R script is provided [`here`]([https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/supplementary/figure_A1_frequency_response_jbl.R](https://github.com/shaupert/HAUPERT_2022/blob/master/scripts/step_by_step/step_by_step.ipynb)) 
 
 ## Integration of the propagation functions into libraries
 
