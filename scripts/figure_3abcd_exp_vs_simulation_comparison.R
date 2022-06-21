@@ -212,7 +212,7 @@ for (ff in 1:dim(F_SIMU)[2])
   # Plot
   p9 <- plot_ly(width = 450, height = 300, x = r.simu, y =L.simu, type = 'scatter', mode = 'lines', name = paste('L (model)',sep=""),
                 showlegend = TRUE)
-  p9 <- add_trace(p9, x = r.exp, y = L.exp, type = 'scatter', mode = 'markers', name= paste('Lexp (exp)',sep=""),
+  p9 <- add_trace(p9, x = r.exp, y = L.exp, type = 'scatter', mode = 'markers', name= paste('L<sub>exp</sub> (exp)',sep=""),
                   marker=list(opacity=1,  size=10),
                   showlegend = TRUE)
   p9 <- add_trace(p9, x=r.simu, y = L0.simu - Ageo.dB, type = 'scatter', mode = 'lines', name ='L<sub>0</sub> - A<sub>geo</sub> (model)' ,
