@@ -41,7 +41,7 @@ propa.plot.active_distance_compiled <- function (L0, L_bkg, f, d, r0=1, t=20, rh
     Ahab.dB[ii] = propa.Ahab(f[ii],r=d[ii],r0,a0)$db
   }
   
-  fig0 = plot_ly(x=L0, y=f, type = 'scatter', mode = 'lines',orientation = 'h', name="source")
+  fig0 = plot_ly(x=L0, y=f, type = 'scatter', mode = 'lines',orientation = 'h', name="white noise")
   fig0 = add_trace(fig0, x=L_bkg, y=f, type = 'scatter', mode = 'lines', line = list(dash="dot"),orientation = 'h', name="ambient sound")
   fig0 = layout(fig0, 
                 xaxis = list(title ="Level [dB SPL]",
