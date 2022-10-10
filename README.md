@@ -1,4 +1,4 @@
-# Physics-based model to predict the acoustic detection distance of terrestrial autonomous recorder units
+# Physics-based model to predict the acoustic detection distance of terrestrial autonomous recording units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest 
 
 This repository contains all the functions in 'R' that were used to process the data and create figures of the publication 
 [Haupert et. al. XXXX, journal to be defined](https://www.to.be.defined.fr)
@@ -7,7 +7,7 @@ The code is available for reproducibility.
 
 This repository is archived on Zenodo: [![DOI](https://zenodo.org/badge/DOI/XXXX/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.3530203)
 
-If the code, even partially, is used for other purpose please cite the paper `Haupert S., Sèbe F., Sueur J. Physics-based model to predict the acoustic detection distance of terrestrial autonomous recorder units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Journal to be defined (XXXX)`
+If the code, even partially, is used for other purpose please cite the paper `Haupert S., Sèbe F., Sueur J. Physics-based model to predict the acoustic detection distance of terrestrial autonomous recording units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Methods in Ecology and Evolution (2022)`
 
 ## Setup and usage
 
