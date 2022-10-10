@@ -1,7 +1,7 @@
 # Physics-based model to predict the acoustic detection distance of terrestrial autonomous recording units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest 
 
 This repository contains all the functions in 'R' that were used to process the data and create figures of the publication 
-[Haupert et. al. XXXX, journal to be defined](https://www.to.be.defined.fr)
+[Haupert et. al. 2022, Methods in Ecology and Evolution](https://www.to.be.defined.fr)
 
 The code is available for reproducibility.
 
