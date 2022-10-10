@@ -5,7 +5,7 @@ This repository contains all the functions in 'R' that were used to process the 
 
 The code is available for reproducibility.
 
-This repository is archived on Zenodo: [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.7181223.svg)](https://zenodo.org/account/settings/github/repository/shaupert/HAUPERT_MEE_2022)
+This repository is archived on Zenodo: [![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.7181223.svg)](https://zenodo.org/record/7181223)
 
 If the code, even partially, is used for other purpose please cite the paper `Haupert S., Sèbe F., Sueur J. Physics-based model to predict the acoustic detection distance of terrestrial autonomous recording units over the diel cycle and across seasons: insights from an Alpine and a Neotropical forest. Methods in Ecology and Evolution (2022)`
 
