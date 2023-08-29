@@ -89,7 +89,7 @@ extractNoise <- function(filename, channel ='left', am_timeline, total_dur, t0, 
 }
 
 #=================================================
-##### Get noise signal (background noise or white noise)
+##### Get signal (chirp or monochromatic signal) from a template matching in order to cut right at the beginning of the signal
 extractTemplate <- function(filename, channel ='left', am_timeline, total_dur = Inf, t0, dur, template, delay=0, Nrep=1, display=FALSE)
 {
   # time beefore and after the sweep that we are looking for
